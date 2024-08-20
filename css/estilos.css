@@ -1,0 +1,287 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+/*header superior*/
+.header__superior {
+    max-width: 1200px; /*ancho maximo*/
+    margin: auto; /*para que se centre*/
+    display: flex; /*para colocar el logo de un lado y la busqueda a la derecha*/
+    align-items: center; /*centrar horizontalmente*/
+    justify-content: space-between; /*para que el logo se coloco a la izquierda y la busqueda a la derecha*/
+    padding: 20px; /*espacio entre logo y buscador*/
+}
+
+/*formato para el logo*/
+.logo img {
+    width: 180px; /*tamaño de logo*/    
+}
+
+.search input {
+    width: 300px; /*ancho del buscador*/
+    padding: 10px; 
+}
+
+/*Barra menú*/
+.container__menu {
+    width: 100%; /*que abarque todo el ancho*/
+    height: 70px; /*alto de la caja de navegador*/
+    background: #3d3d39;
+    padding: 0px 20px; /*arriba - abajo / izquierda y derecha*/
+}
+
+.menu {
+    max-width: 1200px; /*ancho maximo*/
+    margin: auto; /*para que se centre*/
+    height: 100%; /*alto del menú*/
+}
+
+nav{
+    height: 100%; /*alto del nav*/
+}
+
+nav > ul { /* Se aplica > para que me lleve al punto que quiero*/
+    height: 100%; /*alto de la UL*/
+    display: flex; /*para colocar uno al lado del otro*/
+}
+
+/*icono home*/
+
+nav > ul > li:first-child > a {
+    background-image: url(/img/home.png); /*insertando imagen home*/
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center; /*centrar a la imagen vertical y horizontalmente*/
+    padding: 20px 40px; /*ancho y alto del icono Inicio*/ 
+}
+
+/*duplicamos el formato para que el icono de Inicio se mantenga activo despues de pasar el mouse*/
+nav > ul > li:first-child:hover > a {
+    background-image: url(/img/home.png); /*insertando imagen home*/
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center; /*centrar a la imagen vertical y horizontalmente*/
+}
+/*hasta aquí termina el ícono home*/
+
+
+/*seguimos con los Li*/
+
+nav ul li {
+    height: 100%; /*alto del li*/
+    list-style: none; /*para quitarle las viñetas*/
+    position: relative; /*para que el sub menú se relacione con su padre*/
+}
+
+nav > ul > li > a {
+    width: 100%; /*ancho de "a"*/
+    height: 100%; /*alto de "a"*/
+    display: flex; /*para ordenar al costado los menú*/
+    align-items: center; /*centrar horizontalmente el texto de los menus*/
+    padding: 14px; /*separación entre los textos del menú*/
+    color: white;
+    text-transform: uppercase; /*texto en mayúscula*/
+    font-size: 14px;
+    transition: all 300ms ease; /*efecto para que cuando pasemos el puntero cambie de color el menú*/
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1); /*para que crezca la palabras del menú al momento de pasar el mouse*/
+    background: #52524f; /*color para que al momento de pasar el mouse cambie de color*/
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /*sombra para los botones del menú*/
+}
+
+/*creamos una clase select*/
+#selectec {
+    transform: scale(1.1);
+    background-color: #52524f; /*Esto es para que se coloque el color azul y respete el color blanco del icono inicio */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /*sombra para los botones del menú*/  
+}
+
+/*sub menús*/
+nav ul li ul {
+    width: 200px; /*ancho de la caja de los sub menús*/
+    display: flex; /**/
+    flex-direction: column; /*para asegurar que el texto irá uno debajo de otro*/
+    background: #fff; /*color para los submenus*/
+    position: absolute; /*Esto es para que el submenú se posicione delante del menú principal servicio*/
+    top: 90px; /*para que se mantenga debajo del menú*/
+    left: -5px; /*para que se mantenga alineado o al nivel izquierdo del menú principal */
+    padding: 14px 0px; /*espacio arriba abajo y derecha izquierda cero*/
+    visibility: hidden; /*Eso es para ocultar el submenú*/
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /*sombra para el submenú*/
+    z-index: 10; /*para que el submenú se mantenga por encima de todo*/
+    transition: all 300ms ease;
+}
+
+nav ul li:hover ul {
+    visibility: visible; /*para que el submenú se muestre*/
+    opacity: 1; /*para que se muestre*/
+    top: 70px; /*pequeña animación para que aparezca el submenu*/
+}
+
+/*para triangulito del submenú*/
+
+nav ul li ul:before { /*pseudo clase before para crear un elemento que se adapte a él*/
+    content: ''; /*esto es para crear espacio para contenido en blanco*/
+    width: 0; /*ancho del triangulo*/
+    height: 0; /*alto del triángulo*/
+    border-left: 12px solid transparent; /*recorte del borde */
+    border-right: 12px solid transparent; /*tamaño en ambas partes ancho y alto*/
+    border-bottom: 12px solid #fff; /*color para el triangulito*/
+    position: absolute;
+    top: -12px; /*pequeña animación para que aparezca el submenu*/
+    left: 20px; /*para que se coloque más al centro*/
+}
+
+nav ul li ul li a { /*aqui vamos a realizar el efecto hover*/
+    display: block; /*para que se convierta en un bloque*/
+    color: #0099E9;
+    padding: 6px; /*para que se separen los nombre de los submenús y no estén juntos*/
+    margin-left: 14px; /*para que se desplace más a la izquierda*/
+    margin-top: 10px; /*para crear una separación entre renglones de líneas*/
+    font-size: 14px; /*tamaño de la fuente*/
+    text-transform: uppercase; /*textos en mayúsculas*/
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover {
+    background: #0074C7;
+    color: #fff;
+    transform: scale(1.1);
+    padding-left: 30px; /*para el rectángulo o cajas del sub menú sea mas ancha*/
+    font-size: 14px; /*tamaño de fuente*/
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /*sombra al submenú*/
+}
+
+/* MAIN - ARTICULOS*/
+main {
+    background: #f0f0f0;
+    padding: 40px 20px; /*espacio arriba abajo - izquierda derecha*/
+    margin-top: 194px; /*hacia abajo*/
+}
+
+article {
+    max-width: 1200px; /*ancho máximo*/
+    margin: 20px auto; /*margen de 20 y se centre*/
+    padding: 40px; /*espacio de la caja de articulos de textos*/
+    background: #fff;
+}
+
+article p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    
+}
+
+
+
+
+/*Elementos responsivo (icono de rallitas blancas )*/
+
+.icon__menu {
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#label__check {
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check__menu { 
+    display: none; /*para quitar el cuadrito blanco de selección del checkbox*/
+}
+
+
+
+/*crear responsive*/
+@media screen and (max-width: 720px){ /*cuando el ancho llegue a 720 se debe ejecutar algo*/
+    .search input { /*ocultar buscador*/
+        display: none;
+    }
+
+    .header__superior { /*tamaño del header*/
+        padding: 10px;
+    }
+
+    .logo img { /*tamaño del logo*/
+        width: 200px;
+    }
+
+    nav > ul { /*vamos a ingresar y dar nuevo formato al nav o a los menús*/
+        flex-direction: column; /*para que al reducirse el año de la pagina los menús se coloquen uno debajo del otro*/
+        background-color: #141411; /*color para las cajas de menús*/
+        position: fixed; /*para que se coloque por encima de todo los menús*/
+        left: 0; /**/
+        top: 158px;
+        width: 100%; /*ancho del menú*/
+        height: 0px; /*alto del menú*/
+        transition: all 300ms ease; /*efecto para cuando demos click se vea con efecto*/
+        z-index: 100; /*para que esté encima de todo*/
+        opacity: 0; /*para que se pueda ver*/
+        visibility: hidden; /**/
+    }
+
+    nav > ul > li > a:hover {
+        transform: scale(1);
+    }
+
+    nav ul li ul {
+        left: 90px; /*para colocar la posición del submenú a la izquierda*/
+    }
+
+    nav > ul > li:hover ul { /*para mantener el sub menú pegado a SERVICIOS y no a otro menú*/
+        top: 50px;
+    }
+
+    nav > ul > li:first-child a{ /*para la posición del logo inicio*/
+        background-position: 20px;
+    }
+
+    #selected { /*para que cuando esté seleccionado el boton inicio se colocal al centro y cuando no vuelve a la izquierda*/
+        transform: scale(1);
+    }
+
+    #label__check {
+        display: block;
+    }
+
+    .icon__menu {
+        display: flex;
+    }
+
+    /*para que se muestre los menús ocultos después de presionar las rallitas blancas*/
+    #check__menu:checked ~ nav > ul { /*alt 126 ~*/
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    main {
+        margin-top: 158px;
+    }
+
+
+}

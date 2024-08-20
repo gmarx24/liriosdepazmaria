@@ -1,0 +1,38 @@
+/*about*/
+
+.about {
+    background-color: white;
+}
+
+.about__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about__img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    aspect-ratio: 1/1;
+    max-width: 280px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+.about__txts {
+    
+    display: grid;
+    gap: 1.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 2.1rem;
+}
+
+.paragraph {
+    line-height: 1.6;
+    font-weight: 300;
+}

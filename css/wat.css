@@ -1,0 +1,17 @@
+.container-redes{
+    position: fixed;
+    bottom: 20px; /*posicionarse en la parte de abajo*/
+    right: 20px; /*posicionarse a la derecha*/
+}
+
+.container-redes img{
+    width: 60px;
+    padding: 4px;    
+    cursor: pointer;
+    
+}
+
+.container-redes a{
+    margin-top: 4px;
+}
+

@@ -1,0 +1,4 @@
+.contenedor{ /*centrar vídeo*/
+    display: grid;
+    place-items: center;    
+}
