@@ -61,7 +61,7 @@ nav > ul { /* Se aplica > para que me lleve al punto que quiero*/
 /*icono home*/
 
 nav > ul > li:first-child > a {
-    background-image: url(/img/home.png); /*insertando imagen home*/
+    background-image: url(img/home.png); /*insertando imagen home*/
     background-size: 24px;
     background-repeat: no-repeat;
     background-position: center center; /*centrar a la imagen vertical y horizontalmente*/
