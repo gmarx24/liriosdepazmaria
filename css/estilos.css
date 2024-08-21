@@ -70,7 +70,7 @@ nav > ul > li:first-child > a {
 
 /*duplicamos el formato para que el icono de Inicio se mantenga activo despues de pasar el mouse*/
 nav > ul > li:first-child:hover > a {
-    background-image: url(/img/home.png); /*insertando imagen home*/
+    background-image: url(img/home.png); /*insertando imagen home*/
     background-size: 24px;
     background-repeat: no-repeat;
     background-position: center center; /*centrar a la imagen vertical y horizontalmente*/
