@@ -4,7 +4,7 @@
 /* ********************************** */
 .banner {
 	background-image: linear-gradient(3deg, #000000, #00000020), 
-		url('../img/Baner.jpg');
+		url('_/img/Baner.jpg');
 	height: 50rem;
 	background-size: cover;
 	background-position: center;
